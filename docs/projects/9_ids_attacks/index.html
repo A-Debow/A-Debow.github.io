@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Launching and Thwarting Attacks on AI-based Intrusion Detection Systems | Ahmad Debow (Edd)
+    
+  
+</title>
+<meta name="author" content="Ahmad  Debow">
+<meta name="description" content="Using GANs and SHAP to generate polymorphic attacks for testing and improving the robustness of an IDS.">
+
+  <meta name="keywords" content="Ahmad Debow, AI, MLOps, DevOps, Machine Learning, Deep Learning, Generative Adversarial Networks, GANs, AWS, GCP, Cloud Computing, Python, Docker, GitLab, CI/CD, Computer Vision, NLP, Large Language Models, Biomedical AI, Intrusion Detection Systems">
+
+
+
+
+
+
+  <!-- OpenGraph -->
+  <meta property="og:site_name" content="Ahmad Debow (Edd)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ahmad Debow (Edd) | Launching and Thwarting Attacks on AI-based Intrusion Detection Systems">
+  <meta property="og:url" content="http://localhost:4000/projects/9_ids_attacks/">
+  <meta property="og:description" content="Using GANs and SHAP to generate polymorphic attacks for testing and improving the robustness of an IDS.">
+  
+  <meta property="og:locale" content="en">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Launching and Thwarting Attacks on AI-based Intrusion Detection Systems">
+  <meta name="twitter:description" content="Using GANs and SHAP to generate polymorphic attacks for testing and improving the robustness of an IDS.">
+  
+  
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+
+
+
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%92%BB&lt;/text&gt;&lt;/svg&gt;">
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="http://localhost:4000/projects/9_ids_attacks/">
+
+
+  <!-- Dark Mode -->
+  <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script>
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          Ahmad Debow (Edd)
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">publications
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="/projects/">projects
+                    
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/work/">work
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/teaching/">teaching
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">cv
+                    
+                  </a>
+                </li>
+              
+            
+              
+                
+                <li class="nav-item ">
+                  <a class="nav-link" href="/people/">references
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Launching and Thwarting Attacks on AI-based Intrusion Detection Systems</h1>
+    <p class="post-description">Using GANs and SHAP to generate polymorphic attacks for testing and improving the robustness of an IDS.</p>
+  </header>
+
+  <article>
+    <p>This project takes an offensive security approach to “think like an attacker.” It leverages <strong>Generative Adversarial Networks (GANs)</strong> to simulate advanced, polymorphic DDoS attacks, with the goal of exposing weaknesses in AI-based Intrusion Detection Systems (IDS) and developing methods to re-optimize them. The entire process, from data generation to testing, is managed via a full-stack <strong>Django</strong> dashboard.</p>
+
+<hr>
+
+<h3 id="1-understanding-polymorphic-attacks">1. Understanding Polymorphic Attacks</h3>
+
+<p>A polymorphic attack is an advanced cyber threat that constantly changes its identifiable features (like its code or data patterns) to evade detection. Unlike traditional attacks that have a fixed, recognizable signature, each new instance of a polymorphic attack looks different from the last, making it extremely difficult for signature-based or simple pattern-matching Intrusion Detection Systems to stop. This project uses GANs to artificially create this evolving, shape-shifting attack data to train a more robust IDS.</p>
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/polymorphic_attack_explanation.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Diagram explaining a polymorphic attack." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Illustration of a polymorphic attack changing its features to bypass defenses.</figcaption>
+  
+</figure>
+
+<hr>
+
+<h3 id="2-data-preprocessing-and-explainable-feature-selection">2. Data Preprocessing and Explainable Feature Selection</h3>
+
+<p>The project began by analyzing the massive <strong>CIC-IDS2017 dataset (80GB)</strong>. To create effective attacks, it was crucial to first identify the most impactful network features.</p>
+
+<p>The <strong>SHAP (SHapley Additive exPlanations)</strong> algorithm was utilized to analyze feature importance, providing a clear, explainable ranking of the most distinguishing characteristics of DDoS attacks versus benign traffic. This allowed for a targeted approach to attack generation.</p>
+
+<div class="row mt-4">
+    <div class="col-sm-6">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_shap_diagram.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Diagram of the SHAP feature selection process." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">The iterative SHAP process for selecting the most impactful features.</figcaption>
+  
+</figure>
+
+    </div>
+    <div class="col-sm-6">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_shap_barchart.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Bar chart showing the SHAP values for top DDoS features." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">SHAP results identifying the most significant features for DDoS attacks.</figcaption>
+  
+</figure>
+
+    </div>
+</div>
+
+<hr>
+
+<h3 id="3-polymorphic-attack-generation-with-wgans">3. Polymorphic Attack Generation with WGANs</h3>
+
+<p>A <strong>Wasserstein Generative Adversarial Network (WGAN)</strong> was trained to generate novel, realistic attack data based on the features selected by SHAP. The WGAN architecture consists of two competing models:</p>
+<ul>
+  <li>The <strong>Generator</strong> learns to create attack samples from a noise vector, attempting to mimic the statistical properties of real DDoS attacks.</li>
+  <li>The <strong>Discriminator</strong> (or Critic) learns to differentiate between real and generated attacks, providing feedback to the Generator.</li>
+</ul>
+
+<p>Through this iterative, adversarial process, the Generator becomes proficient at creating evolving, polymorphic attack patterns.</p>
+
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 20px; border-radius: 5px; margin-top: 1.5rem; margin-bottom: 2rem;">
+  <h5 style="margin-top:0; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; margin-bottom: 15px;">Adversarial Attack Generation Algorithm</h5>
+  
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">Algorithm 2: Adversarial Attack Generation
+-------------------------------------------------------------------------------
+Input:
+    Generator - noise vector N, DDoS Attack Data
+    Critic/Discriminator - attack, and benign data
+Output:
+    Trained Generator
+    Trained Critic / Discriminator
+
+loop:
+    Generate attack
+    Update loss function "G_loss"
+    
+    while &lt;Discriminator iterations&gt; do
+        Update loss function "D_loss"
+    
+    Send feedback to Generator and to Discriminator
+end loop
+  </code></pre></figure>
+
+</div>
+
+<hr>
+
+<h3 id="4-attack-simulation-and-ids-enhancement">4. Attack Simulation and IDS Enhancement</h3>
+
+<p>We launched attacks against a baseline AI-based IDS by injecting the 5 and 10 most malicious features identified by SHAP. As the results show, this significantly reduced the detection accuracy.</p>
+
+<p>We then improved the AI-based IDS by re-training it on a dataset augmented with our generated polymorphic attacks. This enhancement significantly increased its ability to detect these advanced threats.</p>
+
+<div class="row mt-4">
+    <div class="col-sm-6">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_results_chart_1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Bar chart showing the impact of GAN-based attacks on IDS accuracy." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Injecting 5 and 10 malicious features causes a noticeable drop in detection rate across multiple ML models.</figcaption>
+  
+</figure>
+
+    </div>
+    <div class="col-sm-6">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_results_chart_2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Bar chart showing IDS performance before and after enhancement." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+    <figcaption class="caption">Model accuracy before enhancement (5_attack) and after enhancement (5_enh) using 5 malicious features.</figcaption>
+  
+</figure>
+
+    </div>
+</div>
+
+<hr>
+
+<h3 id="5-interactive-admin-dashboard">5. Interactive Admin Dashboard</h3>
+
+<p>To make the system practical, a full administrative dashboard was developed using <strong>Django</strong>. This interface allows a security analyst to:</p>
+<ul>
+  <li>Generate new malicious datasets with a customizable number of attack features.</li>
+  <li>Test both a standard IDS and an enhanced, re-trained IDS against the generated attacks.</li>
+  <li>Visualize traffic flow characteristics and compare IDS performance side-by-side.</li>
+</ul>
+
+<div class="row mt-3 mb-3">
+    <div class="col-sm-7">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_dashboard_1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Screenshot of the adversarial data generation interface." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+    </div>
+    <div class="col-sm-5">
+        
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/ids_dashboard_2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" alt="Screenshot of the IDS testing interface." loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+    </div>
+</div>
+
+<p><br></p>
+
+<hr>
+<h3 id="technical-summary">Technical Summary</h3>
+<ul>
+  <li>
+<strong>Key Concepts:</strong> Generative Adversarial Networks (WGAN), Explainable AI (SHAP), Offensive Security, Polymorphic Attacks</li>
+  <li>
+<strong>Dataset:</strong> CIC-IDS2017</li>
+  <li>
+<strong>Frameworks:</strong> TensorFlow, Keras, Scikit-learn</li>
+  <li>
+<strong>Dashboard:</strong> Django</li>
+</ul>
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+
+
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      
+  © Copyright 2025
+  Ahmad
+  
+  Debow. 
+  
+  
+    Last updated: August 09, 2025.
+  
+
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+<!-- Badges -->
+
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+
+  <!-- MathJax -->
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  
+    <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <!-- Scrolling Progress Bar -->
+  <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+
+
+
+
+
+
+
+  <!-- Back to Top -->
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+
+
+
+
+  </body>
+</html>
