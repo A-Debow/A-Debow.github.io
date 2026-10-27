@@ -4,8 +4,8 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: DebowCV10052025.pdf # you can also use external links here
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+cv_pdf: Ahmad_Debow_CV.pdf # you can also use external links here
+description: Curriculum vitae of Ahmad Debow.
 toc:
   sidebar: left
 ---

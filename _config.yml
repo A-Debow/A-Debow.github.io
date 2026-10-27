@@ -32,7 +32,7 @@ icon: 🧠 # AI/brain emoji fits your biomedical and AI focus
 
 # --- URL & DEPLOYMENT (IMPORTANT) ---
 # This should be your GitHub Pages URL.
-url: https://eddie98-ai.github.io
+url: https://a-debow.github.io
 baseurl: ""
 
 last_updated: true
@@ -121,7 +121,7 @@ related_blog_posts:
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
   # IMPORTANT: This should be your username and the name of your GitHub Pages repository.
-  repo: eddie98-ai/eddie98-ai.github.io
+  repo: A-Debow/A-Debow.github.io
   # Go to giscus.app to get your repo_id and category_id after setting it up.
   repo_id: # PASTE YOUR REPO_ID HERE
   category: Comments # name of the category under which discussions will be created
@@ -187,23 +187,17 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - bin/
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
+  - docs/ # the published site lives here; never build it into itself
+  - site/
   - Dockerfile
   - docker-compose.yml
-  - docker-compose-slim.yml
-  - FAQ.md
   - Gemfile
   - Gemfile.lock
-  - INSTALL.md
   - LICENSE
-  - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
-  - readme_preview/
   - vendor
 keep_files:
   - CNAME
