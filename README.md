@@ -30,6 +30,12 @@ Personal academic website of **Ahmad Debow**: AI & security, cloud-native engine
 
 > `docs/` and `site/` are excluded in `_config.yml`, so a build never copies the old site into the new one.
 
+> **Warning:** `docs/` is currently edited by hand and is newer than the Jekyll sources. In particular, the French pages in `docs/fr/` (and the FR/EN switch in the navbar of the main pages) exist **only** in `docs/`. Do not run step 3 without first copying `docs/fr/` aside and re-adding the language switch afterwards.
+
+## French version
+
+The main pages (home, CV, work, projects list, publications, teaching, references) have French copies under `docs/fr/`, linked by an **FR / EN** item in the navbar and by `hreflang` links in each page head. Detailed project pages are English only. When you change a main page in English, update its French copy too.
+
 ## License
 
 Theme: [al-folio](https://github.com/alshedivat/al-folio) (MIT, see `LICENSE`). Content © Ahmad Debow.
