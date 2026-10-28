@@ -7,7 +7,7 @@ importance: 2
 category: AI for Cybersecurity & Privacy
 ---
 
-This project takes an offensive security approach to "think like an attacker." It leverages **Generative Adversarial Networks (GANs)** to simulate advanced, polymorphic DDoS attacks, with the goal of exposing weaknesses in AI-based Intrusion Detection Systems (IDS) and developing methods to re-optimize them. The entire process, from data generation to testing, is managed via a full-stack **Django** dashboard.
+This project takes an offensive security approach to "think like an attacker." It leverages Generative Adversarial Networks (GANs) to simulate advanced, polymorphic DDoS attacks, with the goal of exposing weaknesses in AI-based Intrusion Detection Systems (IDS) and developing methods to re-optimize them. The entire process, from data generation to testing, is managed via a full-stack Django dashboard.
 
 ---
 
@@ -21,9 +21,9 @@ A polymorphic attack is an advanced cyber threat that constantly changes its ide
 
 ### 2. Data Preprocessing and Explainable Feature Selection
 
-The project began by analyzing the massive **CIC-IDS2017 dataset (80GB)**. To create effective attacks, it was crucial to first identify the most impactful network features.
+The project began by analyzing the massive CIC-IDS2017 dataset (80GB). To create effective attacks, it was crucial to first identify the most impactful network features.
 
-The **SHAP (SHapley Additive exPlanations)** algorithm was utilized to analyze feature importance, providing a clear, explainable ranking of the most distinguishing characteristics of DDoS attacks versus benign traffic. This allowed for a targeted approach to attack generation.
+The SHAP (SHapley Additive exPlanations) algorithm was utilized to analyze feature importance, providing a clear, explainable ranking of the most distinguishing characteristics of DDoS attacks versus benign traffic. This allowed for a targeted approach to attack generation.
 
 <div class="row mt-4">
     <div class="col-sm-6">
@@ -38,16 +38,16 @@ The **SHAP (SHapley Additive exPlanations)** algorithm was utilized to analyze f
 
 ### 3. Polymorphic Attack Generation with WGANs
 
-A **Wasserstein Generative Adversarial Network (WGAN)** was trained to generate novel, realistic attack data based on the features selected by SHAP. The WGAN architecture consists of two competing models:
-- The **Generator** learns to create attack samples from a noise vector, attempting to mimic the statistical properties of real DDoS attacks.
-- The **Discriminator** (or Critic) learns to differentiate between real and generated attacks, providing feedback to the Generator.
+A Wasserstein Generative Adversarial Network (WGAN) was trained to generate novel, realistic attack data based on the features selected by SHAP. The WGAN architecture consists of two competing models:
+- The Generator learns to create attack samples from a noise vector, attempting to mimic the statistical properties of real DDoS attacks.
+- The Discriminator (or Critic) learns to differentiate between real and generated attacks, providing feedback to the Generator.
 
 Through this iterative, adversarial process, the Generator becomes proficient at creating evolving, polymorphic attack patterns.
 
 <div style="background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 20px; border-radius: 5px; margin-top: 1.5rem; margin-bottom: 2rem;">
   <h5 style="margin-top:0; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; margin-bottom: 15px;">Adversarial Attack Generation Algorithm</h5>
   {% highlight plaintext %}
-Algorithm 2: Adversarial Attack Generation
+Algorithm: Adversarial Attack Generation
 -------------------------------------------------------------------------------
 Input:
     Generator - noise vector N, DDoS Attack Data
@@ -89,7 +89,7 @@ We then improved the AI-based IDS by re-training it on a dataset augmented with 
 
 ### 5. Interactive Admin Dashboard
 
-To make the system practical, a full administrative dashboard was developed using **Django**. This interface allows a security analyst to:
+To make the system practical, a full administrative dashboard was developed using Django. This interface allows a security analyst to:
 - Generate new malicious datasets with a customizable number of attack features.
 - Test both a standard IDS and an enhanced, re-trained IDS against the generated attacks.
 - Visualize traffic flow characteristics and compare IDS performance side-by-side.

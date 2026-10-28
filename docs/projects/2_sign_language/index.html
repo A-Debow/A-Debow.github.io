@@ -274,15 +274,15 @@
 
 <p>This module takes video input from a camera and converts the observed sign language gestures into text.</p>
 
-<p>It starts by using <strong>MediaPipe Holistic</strong>, a fast and lightweight pose estimation tool, to extract 3D landmarks from the hands, face, and body of the person signing. These landmarks are converted into a sequence of coordinates representing the movement and shape of gestures over time.</p>
+<p>It starts by using MediaPipe Holistic, a fast and lightweight pose estimation tool, to extract 3D landmarks from the hands, face, and body of the person signing. These landmarks are converted into a sequence of coordinates representing the movement and shape of gestures over time.</p>
 
 <p>The sequence is then processed by a deep learning model. The model architecture includes:</p>
 
 <ul>
   <li>
-<strong>1D Convolutional Layers</strong> to capture short-term motion patterns.</li>
+1D Convolutional Layers to capture short-term motion patterns.</li>
   <li>
-<strong>Transformer Blocks</strong> to understand the overall temporal structure and context of the gesture.</li>
+Transformer Blocks to understand the overall temporal structure and context of the gesture.</li>
 </ul>
 
 <p>This allows the system to correctly classify even complex, time-dependent signs.</p>
@@ -302,7 +302,7 @@
 
 <h3 id="2-text--voice-to-sign-language-video-retrieval-system">2. Text &amp; Voice to Sign Language (Video Retrieval System)</h3>
 
-<p>This part of the system works in the opposite direction: the user provides <strong>text</strong> (by typing or speaking), and the system returns a sequence of <strong>sign language videos</strong> that express the same message.</p>
+<p>This part of the system works in the opposite direction: the user provides text (by typing or speaking), and the system returns a sequence of sign language videos that express the same message.</p>
 
 <p>Rather than matching each word directly to a video, this module understands the full sentence using sentence embeddings. It then retrieves the most relevant sign videos using a two-phase approach:</p>
 
@@ -323,26 +323,26 @@
 
 <p>The result is a smooth and context-aware translation from spoken or written language into sign video sequences.</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Offline: Build topic-based index
-</span><span class="n">FUNCTION</span> <span class="nc">Build_Hierarchical_Index</span><span class="p">(</span><span class="n">video_corpus</span><span class="p">):</span>
-    <span class="n">clusters</span> <span class="o">=</span> <span class="nc">K_Means_Clustering</span><span class="p">(</span><span class="n">video_corpus</span><span class="p">)</span>
-    <span class="n">index</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">FOR</span> <span class="n">topic</span> <span class="n">IN</span> <span class="n">clusters</span><span class="p">:</span>
-        <span class="n">videos</span> <span class="o">=</span> <span class="nf">get_videos_for_cluster</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
-        <span class="n">index</span><span class="p">[</span><span class="n">topic</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">FAISS</span><span class="p">.</span><span class="nf">build_index</span><span class="p">(</span><span class="nf">embeddings_for</span><span class="p">(</span><span class="n">videos</span><span class="p">))</span>
-    <span class="n">RETURN</span> <span class="n">index</span>
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext"># Offline: Build topic-based index
+FUNCTION Build_Hierarchical_Index(video_corpus):
+    clusters = K_Means_Clustering(video_corpus)
+    index = {}
+    FOR topic IN clusters:
+        videos = get_videos_for_cluster(topic)
+        index[topic.id] = FAISS.build_index(embeddings_for(videos))
+    RETURN index
 
-<span class="c1"># Online: Retrieve video sequence from text
-</span><span class="n">FUNCTION</span> <span class="nc">CAHR_Retrieve_Sign_Sequence</span><span class="p">(</span><span class="n">text_query</span><span class="p">,</span> <span class="n">text_model</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
-    <span class="n">embedding</span> <span class="o">=</span> <span class="n">text_model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">text_query</span><span class="p">)</span>
-    <span class="n">topic_id</span> <span class="o">=</span> <span class="nf">find_closest_cluster</span><span class="p">(</span><span class="n">embedding</span><span class="p">,</span> <span class="n">index</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>
-    <span class="n">sub_index</span> <span class="o">=</span> <span class="n">index</span><span class="p">[</span><span class="n">topic_id</span><span class="p">]</span>
-    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">FOR</span> <span class="n">phrase</span> <span class="n">IN</span> <span class="nf">extract_key_phrases</span><span class="p">(</span><span class="n">text_query</span><span class="p">):</span>
-        <span class="n">emb</span> <span class="o">=</span> <span class="n">text_model</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span>
-        <span class="n">video</span> <span class="o">=</span> <span class="n">sub_index</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">emb</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">sequence</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">video</span><span class="p">)</span>
-    <span class="n">RETURN</span> <span class="n">sequence</span></code></pre></figure>
+# Online: Retrieve video sequence from text
+FUNCTION CAHR_Retrieve_Sign_Sequence(text_query, text_model, index):
+    embedding = text_model.predict(text_query)
+    topic_id = find_closest_cluster(embedding, index.keys())
+    sub_index = index[topic_id]
+    sequence = []
+    FOR phrase IN extract_key_phrases(text_query):
+        emb = text_model.predict(phrase)
+        video = sub_index.search(emb, K=1)
+        sequence.add(video)
+    RETURN sequence</code></pre></figure>
 
 <hr>
 

@@ -15,7 +15,7 @@ The goal was to create a reliable and automated system for building, testing, an
 
 ### 1. System Architecture
 
-The platform is built around two core components: a **GitLab** instance for source code management and a **Jenkins** server for automation. The entire system is hosted on a Linux (Ubuntu) server configured with a static IP and DNS for stable, reliable access.
+The platform is built around two core components: a GitLab instance for source code management and a Jenkins server for automation. The entire system is hosted on a Linux (Ubuntu) server configured with a static IP and DNS for stable, reliable access.
 
 ---
 
@@ -59,7 +59,7 @@ pipeline {
         stage('Package') {
             steps {
                 // 3. Build a Docker image for the application
-                sh 'docker build -t my-app:${BUILD_NUMBER} .'
+                sh 'docker build -t my-registry/my-app:${BUILD_NUMBER} .'
             }
         }
         stage('Deploy') {

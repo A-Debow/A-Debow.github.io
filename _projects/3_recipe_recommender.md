@@ -157,8 +157,8 @@ This module acts as a powerful filtering layer on top of the recommendation engi
 
 A dedicated chatbot was developed to answer user questions about healthy eating and nutrition. To ensure factual and safe responses, it was built using a Retrieval-Augmented Generation (RAG) approach with open-source Hugging Face models.
 
-*   **Prompt Engineering:** When a user asks a question, the system first retrieves relevant, pre-vetted nutritional facts from a curated knowledge base.
-*   **Contextual Injection:** These facts are then injected directly into a carefully crafted prompt for a generative language model. This grounds the model's response in factual data, preventing hallucination and ensuring the advice is focused and reliable.
+*   **Retrieval:** When a user asks a question, the system first retrieves relevant, pre-vetted nutritional facts from a curated knowledge base.
+*   **Contextual Injection:** These facts are then injected directly into a carefully crafted prompt for a generative language model. This grounds the model's response in factual data, reducing hallucination and ensuring the advice is focused and reliable.
 
 ---
 

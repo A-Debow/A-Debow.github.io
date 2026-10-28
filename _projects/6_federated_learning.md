@@ -8,15 +8,15 @@ category: AI for Cybersecurity & Privacy
 ---
 
 
-Traditional centralized machine learning for intrusion detection faces significant privacy risks and processing demands, making it inefficient for large-scale networks. This project solves these issues by using **Federated Learning (FL)**, a technique that enables collaborative model training on decentralized data without ever exposing the raw data itself.
+Traditional centralized machine learning for intrusion detection faces significant privacy risks and processing demands, making it inefficient for large-scale networks. This project solves these issues by using Federated Learning (FL), a technique that enables collaborative model training on decentralized data without ever exposing the raw data itself.
 
-The system architecture was evaluated on three datasets from the **Canadian Institute for Cybersecurity (CIC)**, and this project proposed and analyzed three distinct FL algorithms: **Isolated-FL**, **Intra-FL**, and **Intra-Personalized-FL**.
+The system architecture was evaluated on three datasets from the Canadian Institute for Cybersecurity (CIC), and this project proposed and analyzed three distinct FL algorithms: Isolated-FL, Intra-FL, and Intra-Personalized-FL.
 
 ---
 
 ### 1. The Intra-Federated Learning Architecture
 
-The core of the system is a **Master-Slave architecture** that executes the FL training process. The goal is to build a robust, global Deep Neural Network (DNN) by aggregating knowledge from multiple clients (slaves) without centralizing their sensitive data. The entire process is visually represented by the flowchart and system diagram below.
+The core of the system is a Master-Slave architecture that executes the FL training process. The goal is to build a robust, global Deep Neural Network (DNN) by aggregating knowledge from multiple clients (slaves) without centralizing their sensitive data. The entire process is visually represented by the flowchart and system diagram below.
 
 <div class="row mt-4">
     <div class="col-sm-8">
@@ -28,12 +28,12 @@ The core of the system is a **Master-Slave architecture** that executes the FL t
 </div>
 
 The step-by-step process, outlined in the pseudocode, is as follows:
-1.  The **Master** node initializes a global DNN and distributes its weights.
-2.  Each **Slave** node trains the model on its local dataset for a single epoch, then saves and sends its updated weights (as an `H5` file) back to the Master.
-3.  The **Master** aggregates all incoming weights using a **weighted averaging** method to produce an improved global model.
+1.  The Master node initializes a global DNN and distributes its weights.
+2.  Each Slave node trains the model on its local dataset for a single epoch, then saves and sends its updated weights (as an `H5` file) back to the Master.
+3.  The Master aggregates all incoming weights using a weighted averaging method to produce an improved global model.
 4.  This process is repeated for a predefined number of epochs.
 
-<div style="background-color: #f8f_config.ymla; border: 1px solid #e9ecef; padding: 15px; border-radius: 5px; margin-top: 1.5rem; margin-bottom: 2rem;">
+<div style="background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 15px; border-radius: 5px; margin-top: 1.5rem; margin-bottom: 2rem;">
   <h5 style="margin-top:0; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; margin-bottom: 15px;">Algorithm Pseudocode</h5>
 {% highlight plaintext %}
 Require: S: Set of Slaves
@@ -62,23 +62,23 @@ Distributed Slave Execution:
 
 ### 2. Threshold-Based Classification and Results
 
-The final, aggregated DNN produces an output score for incoming network traffic. This score is compared against a tunable **decision threshold** to classify the activity as either an attack or benign. The threshold's value directly impacts the trade-off between Precision and Recall, as illustrated in the performance chart.
+The final, aggregated DNN produces an output score for incoming network traffic. This score is compared against a tunable decision threshold to classify the activity as either an attack or benign. The threshold's value changes the balance between these metrics, as shown in the chart.
 
 <div class="row mt-4">
     <div class="col-sm-7">
         {% include figure.liquid path="assets/img/fl_threshold_metrics_chart.png" class="img-fluid rounded z-depth-1" alt="Chart showing Precision, Recall, and F1-Score at different thresholds." caption="Evaluation metrics showing the relationship between the decision threshold and model performance." %}
     </div>
     <div class="col-sm-5">
-      <p style="margin-top: 1rem;">The table below shows the model's performance at various thresholds. Based on these results, a threshold of **0.6** was selected as the optimal balance, achieving a high F1-Score of 0.90 with 95% precision and 85% recall.</p>
+      <p style="margin-top: 1rem;">The table below shows the model's performance at various thresholds. Based on these results, a threshold of 0.6 was selected, giving an average F1-score of 0.90, with a class-1 precision of 0.95 and a class-0 recall of 0.85.</p>
       
       <div class="table-responsive">
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th style="text-align: center">Threshold</th>
-      <th style="text-align: center">Precision</th>
-      <th style="text-align: center">Recall</th>
-      <th style="text-align: center">F1-Score Avg</th>
+      <th style="text-align: center">Precision (class 1)</th>
+      <th style="text-align: center">Recall (class 0)</th>
+      <th style="text-align: center">F1-Score (avg)</th>
     </tr>
   </thead>
   <tbody>
@@ -113,10 +113,10 @@ The final, aggregated DNN produces an output score for incoming network traffic.
       <td style="text-align: center">0.90</td>
     </tr>
     <tr class="table-primary">
-      <td style="text-align: center"><strong>0.6</strong></td>
-      <td style="text-align: center"><strong>0.95</strong></td>
-      <td style="text-align: center"><strong>0.85</strong></td>
-      <td style="text-align: center"><strong>0.90</strong></td>
+      <td style="text-align: center">0.6</td>
+      <td style="text-align: center">0.95</td>
+      <td style="text-align: center">0.85</td>
+      <td style="text-align: center">0.90</td>
     </tr>
     <tr>
       <td style="text-align: center">0.7</td>

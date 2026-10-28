@@ -32,12 +32,12 @@ This project focuses on making communication easier for people who are deaf or h
 
 This module takes video input from a camera and converts the observed sign language gestures into text.
 
-It starts by using **MediaPipe Holistic**, a fast and lightweight pose estimation tool, to extract 3D landmarks from the hands, face, and body of the person signing. These landmarks are converted into a sequence of coordinates representing the movement and shape of gestures over time.
+It starts by using MediaPipe Holistic, a fast and lightweight pose estimation tool, to extract 3D landmarks from the hands, face, and body of the person signing. These landmarks are converted into a sequence of coordinates representing the movement and shape of gestures over time.
 
 The sequence is then processed by a deep learning model. The model architecture includes:
 
-- **1D Convolutional Layers** to capture short-term motion patterns.
-- **Transformer Blocks** to understand the overall temporal structure and context of the gesture.
+- 1D Convolutional Layers to capture short-term motion patterns.
+- Transformer Blocks to understand the overall temporal structure and context of the gesture.
 
 This allows the system to correctly classify even complex, time-dependent signs.
 
@@ -58,7 +58,7 @@ def get_model(dim=192, dropout_step=0):
 
 ### 2. Text & Voice to Sign Language (Video Retrieval System)
 
-This part of the system works in the opposite direction: the user provides **text** (by typing or speaking), and the system returns a sequence of **sign language videos** that express the same message.
+This part of the system works in the opposite direction: the user provides text (by typing or speaking), and the system returns a sequence of sign language videos that express the same message.
 
 Rather than matching each word directly to a video, this module understands the full sentence using sentence embeddings. It then retrieves the most relevant sign videos using a two-phase approach:
 
@@ -72,7 +72,7 @@ Rather than matching each word directly to a video, this module understands the 
 
 The result is a smooth and context-aware translation from spoken or written language into sign video sequences.
 
-{% highlight python %}
+{% highlight plaintext %}
 # Offline: Build topic-based index
 FUNCTION Build_Hierarchical_Index(video_corpus):
     clusters = K_Means_Clustering(video_corpus)

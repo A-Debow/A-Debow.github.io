@@ -23,7 +23,7 @@ A significant part of this project was the creation of a high-quality, custom da
 
 ### 2. Feature Engineering
 
-Since the packet content is encrypted, the core of the detection methodology relies on **feature engineering** from metadata and traffic flow characteristics. The goal is to find behavioral patterns that are unique to TOR traffic. Key engineered features included:
+Since the packet content is encrypted, the core of the detection methodology relies on feature engineering from metadata and traffic flow characteristics. The goal is to find behavioral patterns that are unique to TOR traffic. Key engineered features included:
 - **Packet Size Statistics:** Mean, standard deviation, and variance of packet sizes within a flow.
 - **Inter-Arrival Times:** The timing patterns between packets, which can differ significantly between TOR's multi-hop routing and direct HTTPS connections.
 - **Flow Duration and Volume:** The total length and data volume of a communication session.
@@ -37,13 +37,13 @@ Several machine learning classifiers were built and trained to distinguish betwe
 - **Tree-based Models:** Random Forest and Gradient Boosting, chosen for their ability to handle diverse feature types and their inherent explainability.
 - **Support Vector Machines (SVM):** Evaluated for their effectiveness in finding an optimal separating hyperplane in high-dimensional feature space.
 
-The models were rigorously evaluated on both the standard and the newly curated datasets, measuring their **accuracy, precision, and recall**. The results contributed to research in network security and traffic analysis by demonstrating the viability of using behavioral characteristics to identify encrypted TOR traffic with a high degree of confidence.
+The models were rigorously evaluated on both the standard and the newly curated datasets, measuring their accuracy, precision, and recall. The results contributed to research in network security and traffic analysis by demonstrating the viability of using behavioral characteristics to identify encrypted TOR traffic with a high degree of confidence.
 
 <br>
 
 ---
 ### Technical Summary
-- **Key Concepts:** Network Traffic Analysis, Anomaly Detection, Encrypted Traffic Classification
+- **Key Concepts:** Network Traffic Analysis, Encrypted Traffic Classification
 - **Data Engineering:** Custom Dataset Curation, Feature Engineering
 - **ML Models:** Random Forest, Gradient Boosting, SVM
 - **Tools:** Scapy, Pandas, Scikit-learn

@@ -11,9 +11,9 @@ category: Intelligent Systems & User Experience
   This project is part of ongoing research for a future publication. Therefore, the source code will remain private. The published paper and supporting materials will be made available here upon release.
 </div>
 
-This project introduces a robust pipeline for identifying contradictions within English documents. Built with **FastAPI**, it leverages advanced NLP techniques, including text chunking, coreference resolution, and a **Retrieval-Augmented Generation (RAG)** architecture to ensure high accuracy and contextual understanding.
+This project introduces a robust pipeline for identifying contradictions within English documents. Built with FastAPI, it leverages advanced NLP techniques, including text chunking, coreference resolution, and a Retrieval-Augmented Generation (RAG) architecture to ensure high accuracy and contextual understanding.
 
-By integrating **Large Language Models** with vector similarity search, the system can be applied to critical real-world tasks like validating technical requirements, reviewing legal contracts, and ensuring consistency in large-scale documentation.
+By integrating Large Language Models with vector similarity search, the system can be applied to critical real-world tasks like validating technical requirements, reviewing legal contracts, and ensuring consistency in large-scale documentation.
 
 <br>
 <hr>
