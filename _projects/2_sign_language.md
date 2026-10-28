@@ -3,6 +3,7 @@ layout: page
 title: AI-Powered Sign Language & Assistive Technology
 description: A real-time sign language translation and speech therapy platform.
 img: assets/img/sign_language.png
+period: Feb 2025 – Jun 2025
 importance: 2
 category: AI for Healthcare & Life Sciences
 ---

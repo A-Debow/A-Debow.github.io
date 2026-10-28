@@ -3,6 +3,7 @@ layout: page
 title: Smart Recipe Recommendation System
 description: A full-stack Django app recommending recipes based on ingredients and health needs.
 img: assets/img/recipe_recommender.png
+period: Dec 2024 – Feb 2025
 importance: 3
 category: Intelligent Systems & User Experience
 ---

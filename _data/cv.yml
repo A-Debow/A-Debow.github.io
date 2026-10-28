@@ -96,8 +96,10 @@
   type: map
   contents:
     - name: Arabic
-      value: Native Proficiency
+      value: Native
     - name: English
-      value: 'IELTS Certified: Reading C1, Writing B2, Listening B2, Speaking B2'
+      value: C1
     - name: French
-      value: Conversant with basic reading, writing, and speaking skills
+      value: B1
+    - name: German
+      value: A2

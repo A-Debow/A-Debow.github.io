@@ -3,6 +3,7 @@ layout: page
 title: COVID-19 Diagnosis with Deep Learning from CT Scans
 description: A novel CNN architecture, AdjCNet, for classifying COVID-19, Pneumonia, and Normal cases from CT scans.
 img: assets/img/covid_confusion.png
+period: Published Sep 2023
 importance: 3
 category: AI for Healthcare & Life Sciences
 ---

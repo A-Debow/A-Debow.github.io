@@ -3,6 +3,7 @@ layout: page
 title: Launching and Thwarting Attacks on AI-based Intrusion Detection Systems
 description: Using GANs and SHAP to generate polymorphic attacks for testing and improving the robustness of an IDS.
 img: assets/img/ids_usecase_diagram.png
+period: 2022 (BSc thesis, HIAST)
 importance: 2
 category: AI for Cybersecurity & Privacy
 ---

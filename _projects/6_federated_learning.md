@@ -3,6 +3,7 @@ layout: page
 title: Distributed Deep Learning for Anomaly Detection via Federated Learning
 description: A privacy-preserving intrusion detection system using Federated Learning to train models on decentralized data.
 img: assets/img/federated_learning_flowchart.png
+period: Jun 2023 – Aug 2023
 importance: 4
 category: AI for Cybersecurity & Privacy
 ---

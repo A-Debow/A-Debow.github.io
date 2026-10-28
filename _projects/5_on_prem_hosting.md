@@ -3,6 +3,7 @@ layout: page
 title: On-Prem Hosting & CI/CD Infrastructure
 description: Architected and deployed a self-hosted GitLab and Jenkins platform for robust, automated software delivery.
 img: assets/img/ci_cd_architecture.png
+period: Jan 2023 – Mar 2023
 importance: 5
 category: DevOps & MLOps Infrastructure
 ---

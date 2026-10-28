@@ -3,6 +3,7 @@ layout: page
 title: Generating Explainable Recommendations with Reinforcement Learning
 description: A hybrid framework combining Biclustering and Q-Learning to solve the cold start and gray sheep problems in movie recommendations.
 img: assets/img/reinforcement_learning_diagram.png
+period: Jun 2024 – Nov 2024
 importance: 5
 category: Intelligent Systems & User Experience
 ---

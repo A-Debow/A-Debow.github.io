@@ -3,6 +3,7 @@ layout: page
 title: AI-Powered Call Center Analytics Platform
 description: An end-to-end platform to transcribe, analyze, and visualize call center audio using Transformer-based NLP models and a fine-tuned classifier.
 img: assets/img/call_center_platform.png
+period: Jun 2025 – Oct 2025
 importance: 1
 category: Intelligent Systems & User Experience
 ---

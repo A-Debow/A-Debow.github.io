@@ -3,6 +3,7 @@ layout: page
 title: TOR Network Detection via Machine Learning
 description: Building and evaluating machine learning classifiers to identify encrypted TOR network traffic from raw packet data.
 img: # You can add a generic cybersecurity/network image later if you wish
+period: Jan 2023 – Mar 2023
 importance: 7
 category: AI for Cybersecurity & Privacy
 ---
