@@ -25,12 +25,12 @@ latest_posts:
   limit: 3 
 ---
 
-I am a passionate AI and MLOps Engineer dedicated to solving real-world problems through technology. My expertise lies at the intersection of **AI research**, **cloud computing**, and **software development**.
+I am a passionate AI and MLOps Engineer dedicated to solving real-world problems through technology. My expertise lies at the intersection of AI research, cloud computing, and software development.
 
-I am currently a **Master 2 student in Multimedia Networking** at Université Paris-Saclay and Institut Polytechnique de Paris (Télécom SudParis), and I am looking for a 6-month **end-of-study internship in AI or security** starting in April 2027. In parallel, I work as a freelance **Cloud-Native Engineer** with [XBridge Technologies](https://xbridge-tech.com/), building GitOps-driven **Kubernetes** platforms.
+I am currently a Master 2 student in Multimedia Networking at Université Paris-Saclay and Institut Polytechnique de Paris (Télécom SudParis), and I am looking for a 6-month end-of-study internship in AI or security starting in April 2027. In parallel, I work as a freelance Cloud-Native Engineer with [XBridge Technologies](https://xbridge-tech.com/), building GitOps-driven Kubernetes platforms.
 
-Before that, at [Maly Tech Ltd](https://maly.ai) in Dubai, I was **ISMS Manager**, leading ISO 27001 compliance, and previously **Lead DevOps & MLOps Engineer**, deploying AI-powered fintech platforms on **AWS**, **GCP** and **Alibaba Cloud**.
+Before that, at [Maly Tech Ltd](https://maly.ai) in Dubai, I was ISMS Manager, leading ISO 27001 compliance, and previously Lead DevOps & MLOps Engineer, deploying AI-powered fintech platforms on AWS, GCP and Alibaba Cloud.
 
-My academic background is in Information Systems Engineering from HIAST, where I graduated **first in my class**. My thesis, *Deep Learning for Launching and Thwarting Attacks on AI-based Intrusion Detection Systems (IDS)*, involved developing a novel framework using **Generative Adversarial Networks (GANs)** to create polymorphic poisoning attacks and integrating **SHAP** for model explainability. This research honed my skills in both offensive and defensive AI, driving my interest in creating resilient and transparent machine learning systems.
+My academic background is in Information Systems Engineering from HIAST, where I graduated first in my class. My thesis, *Deep Learning for Launching and Thwarting Attacks on AI-based Intrusion Detection Systems (IDS)*, involved developing a novel framework using Generative Adversarial Networks (GANs) to create polymorphic poisoning attacks and integrating SHAP for model explainability. This research honed my skills in both offensive and defensive AI, driving my interest in creating resilient and transparent machine learning systems.
 
 Beyond my core technical roles, I enjoy engaging in leadership roles, contributing to the open-source community, and mentoring.
