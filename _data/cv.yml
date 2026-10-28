@@ -26,6 +26,12 @@
       description:
         - Built a GitOps-driven Kubernetes platform on Talos Linux, fully defined as code.
         - Platform services with Argo CD, Longhorn, MetalLB, cert-manager and NGINX Ingress; full rebuild in about 20 minutes, validated by 34 automated checks.
+    - title: DevOps Engineer (Consultant)
+      institution: Opareta Ltd, Kampala, Uganda (remote)
+      year: 2026
+      description:
+        - Migrated a mobile-money platform from GCP to AWS (ECS, RDS PostgreSQL, Terraform), with data migration using AWS DMS.
+        - Hosted frontends on S3 and CloudFront; set up on-premise Ubuntu servers with PostgreSQL, automated with Ansible.
     - title: Information Security Management System (ISMS) Manager
       institution: Maly Tech Ltd, Dubai, UAE
       year: 2025 - 2026
